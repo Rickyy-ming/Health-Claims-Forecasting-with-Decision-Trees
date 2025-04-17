@@ -1,44 +1,45 @@
 # Health-Claims-Forecasting-with-Decision-Trees
-This project aims to build and deploy a predictive model for healthcare reimbursement claims, specifically forecasting the log-transformed reimbursement amounts in 2010 (log10_reimb2010) using structured claims data.
 
-This work was developed as part of the final course project in the 2025 Management Analytics curriculum. It demonstrates end-to-end model training, evaluation, and saving in R using decision tree-based techniques
+This project focuses on building a machine learning model in **R** to predict healthcare reimbursement amounts using structured insurance claim data. The goal is to estimate the log-transformed reimbursement for the year 2010 (`log10_reimb2010`) based on features provided in a historical dataset.
 
-📁 Project Structure
-├── 2025claimsforecast_v2.R      # Main R script: training, evaluation, and model saving
-├── treeFinal.DataR              # Serialized R model object
-├── ClaimsTrain.csv              # (not included here) Training dataset (provided externally)
-├── README.md                    # Project documentation
+This project was completed as part of the final assessment for the McGill University **Master of Management in Analytics (MMA)** program.
+
+---
+
+## 📁 Repository Contents
+
+```text
+├── 2025claimsforecast_v2.R      # Main R script: training and saving the prediction model
+├── treeFinal.DataR              # Saved R model object to be used for evaluation
+├── README.md                    # Project documentation (this file)
 
 
-🚀 Project Goals
-	1.	Model Training
-	•	Build a regression model to predict log10_reimb2010 using features in the ClaimsTrain.csv dataset.
-	•	Select and justify the modeling strategy based on performance and interpretability.
-	2.	Model Evaluation
-	•	Evaluate out-of-sample performance using OSR-squared as the main metric.
-	3.	Model Persistence
-	•	Save the trained model to a .DataR file (treeFinal.DataR) for downstream evaluation and reuse.
-
- 📌 Key Features
-	•	📊 Decision tree modeling for transparency and explainability.
-	•	🧪 Test script compatibility – your code is fully compatible with automated testing frameworks (as per the course instructions).
-	•	⚙️ Serialization with save() to allow quick loading and evaluation of the trained model.
+🎯 Project Objectives
+	1.	Train a predictive model using historical claims data.
+	2.	Save the trained model in R’s .DataR format for deployment and grading.
+	3.	Evaluate performance using Out-of-Sample R-Squared (OSR²) on test data.
+	4.	Ensure reproducibility for automated assessment.
 
 ⸻
 
-🧠 Methodology
-
-The approach includes:
-	•	Preprocessing of features and appropriate transformations.
-	•	Model selection using regression tree methods.
-	•	OSR-squared calculation on test data for validation.
-	•	Saving the model using save(model, file = "treeFinal.DataR").
+🔍 Prediction Target
+	•	log10_reimb2010: The base-10 logarithm of the total reimbursement amount in 2010.
 
 ⸻
 
-📈 Evaluation Criteria
+🧠 Methodology Overview
+	•	Data preprocessing and feature transformation (not shown here due to dataset privacy).
+	•	Training a regression decision tree model using R.
+	•	Saving the final model object as treeFinal.DataR using save().
+	•	Preparing the code for compatibility with an automated evaluation script provided by the course.
 
-This project was graded on:
-	•	✅ Executability of the saved model
-	•	📉 Predictive performance (OSR²)
-	•	🧠 Innovation and soundness of modeling strategy
+⸻
+
+📊 Evaluation Metric
+	•	OSR² (Out-of-Sample R-Squared)
+A measure of model accuracy on test data based on deviation from the training mean.
+
+⚙️ Tools Used
+	•	Language: R
+	•	Modeling: Decision Tree Regression (rpart package assumed)
+	•	Serialization: save() and .DataR format
