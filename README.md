@@ -2,8 +2,6 @@
 
 This project focuses on building a machine learning model in **R** to predict healthcare reimbursement amounts using structured insurance claim data. The goal is to estimate the log-transformed reimbursement for the year 2010 (`log10_reimb2010`) based on features provided in a historical dataset.
 
-This project was completed as part of the final assessment for the McGill University **Master of Management in Analytics (MMA)** program.
-
 ---
 
 ## 📁 Repository Contents
